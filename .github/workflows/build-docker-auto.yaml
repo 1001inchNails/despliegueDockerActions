@@ -2,7 +2,8 @@ name: Crear y subir imagen Docker
 
 on:
   push:
-    - main
+    branches:
+      - main
 
 jobs:
   publish_images:
