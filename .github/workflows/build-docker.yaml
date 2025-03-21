@@ -1,0 +1,14 @@
+name: Crear y subir imagen Docker
+on: 
+  workflow_dispatch
+
+jobs:
+  publish:images: 
+    runs_on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: construir imagen
+        run: docker build -t dccp/ejemplo-imagen-actions:latest
+      - name: subir imagen a dockerhub
+        run: docker push dccp/ejemplo-imagen-actions:latest
